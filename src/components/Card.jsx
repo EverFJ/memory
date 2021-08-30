@@ -2,7 +2,15 @@ import React from "react";
 
 class Card extends React.Component {
   render() {
-    return <p>card</p>;
+    const { color, flipped, onClick } = this.props;
+
+    // console.log(onClick);
+
+    return (
+      <>
+        <div className="card"></div>
+      </>
+    );
   }
 }
 
