@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./components/Card";
+import Endgame from "./components/Endgame";
 import "./App.css";
 
 class App extends React.Component {
@@ -21,7 +22,7 @@ class App extends React.Component {
     };
   }
 
-  shuffle = (cards) => {
+  handleResetButton = (cards) => {
     let currentIndex = cards.length,
       temporaryValue,
       randomIndex;
@@ -33,20 +34,21 @@ class App extends React.Component {
       cards[currentIndex] = cards[randomIndex];
       cards[randomIndex] = temporaryValue;
     }
-    console.log(cards);
-    // this.setState({cards: array})
-  };
-
-  handleResetButton = () => {
-    this.shuffle(this.state.cards);
+    this.setState({
+      cards: cards,
+      moves: 0,
+      pairs: 0,
+    });
   };
 
   handleCardClick = (e) => {};
 
   render() {
+    console.log(this.state.cards);
+
     return (
       <>
-        <h1>Memory Game </h1>
+        <h1 className="title">Memory Game </h1>
         <div className="grid">
           {this.state.cards.map((elem, index) => {
             return (
@@ -59,7 +61,12 @@ class App extends React.Component {
             );
           })}
         </div>
-        <button className="reset" onClick={this.handleResetButton}>
+        <button
+          className="reset"
+          onClick={() => {
+            this.handleResetButton(this.state.cards);
+          }}
+        >
           Reset
         </button>
       </>

@@ -8,7 +8,7 @@ class Card extends React.Component {
 
     return (
       <>
-        <div className="card"></div>
+        <div className="card" onClick={onClick}></div>
       </>
     );
   }
