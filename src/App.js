@@ -42,9 +42,10 @@ class App extends React.Component {
   };
 
   handleCardClick = (key, flipped) => {
-    const card = this.state.cards.find((elem) => elem.id == key);
-
-    this.setState({});
+    const newCards = [...this.state.cards];
+    const cardIndex = this.state.cards.findIndex((elem) => elem.id == key);
+    newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
+    this.setState({ cards: newCards });
   };
 
   render() {
