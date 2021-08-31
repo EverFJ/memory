@@ -22,7 +22,6 @@ class App extends React.Component {
     };
   }
 
-
   handleResetButton = (cards) => {
     let currentIndex = cards.length,
       temporaryValue,
@@ -43,6 +42,7 @@ class App extends React.Component {
   };
 
   handleCardClick = (id) => {
+    // if first card clicked
     const newCards = [...this.state.cards];
     const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
     newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
@@ -59,6 +59,9 @@ class App extends React.Component {
     return (
       <>
         <h1 className="title">Memory Game </h1>
+        {this.state.cards.length === this.state.pairs.length && (
+          <Endgame moves={this.state.moves} />
+        )}
         <div className="grid">
           {this.state.cards.map((elem, index) => {
             return (
@@ -71,8 +74,6 @@ class App extends React.Component {
             );
           })}
         </div>
-
-        
         <button
           className="reset"
           onClick={() => {
