@@ -41,7 +41,9 @@ class App extends React.Component {
     });
   };
 
-  handleCardClick = () => {};
+  handleCardClick = (key) => {
+    const card = this.state.cards.find((elem) => elem.id == key);
+  };
 
   render() {
     console.log(this.state.cards);
