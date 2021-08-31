@@ -2,7 +2,7 @@ import React from "react";
 
 class Card extends React.Component {
   render() {
-    const { color, flipped, onClick, key } = this.props;
+    const { color, flipped, onClick, id } = this.props;
 
     // console.log(onClick);
 
@@ -11,7 +11,7 @@ class Card extends React.Component {
         <div
           className="card"
           onClick={() => {
-            onclick(key, flipped);
+            onclick(id, flipped);
           }}
         ></div>
       </>
