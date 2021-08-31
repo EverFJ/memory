@@ -28,3 +28,17 @@
     background-image: url("logo.png");
     background-attachment: fixed;
 }
+
+.endgame {
+    border: 1px solid black;
+    width: 25%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.reset {
+    float: right;
+    padding: 10px;
+    margin: 20x;
+}

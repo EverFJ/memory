@@ -18,7 +18,7 @@ class App extends React.Component {
         { id: "8", color: "orange", isFlipped: true },
       ],
       moves: 0,
-      pairs: [],
+      pairs: [0, 1, 2, 3, 4, 5, 6, 7, 8],
     };
   }
 
@@ -59,9 +59,15 @@ class App extends React.Component {
     return (
       <>
         <h1 className="title">Memory Game </h1>
-        {this.state.cards.length === this.state.pairs.length && (
-          <Endgame moves={this.state.moves} />
-        )}
+        <button
+          className="reset"
+          onClick={() => {
+            this.handleResetButton(this.state.cards);
+          }}
+        >
+          Reset
+        </button>
+        {true && <Endgame moves={this.state.moves} />}
         <div className="grid">
           {this.state.cards.map((elem, index) => {
             return (
@@ -74,14 +80,6 @@ class App extends React.Component {
             );
           })}
         </div>
-        <button
-          className="reset"
-          onClick={() => {
-            this.handleResetButton(this.state.cards);
-          }}
-        >
-          Reset
-        </button>
       </>
     );
   }
