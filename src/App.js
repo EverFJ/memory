@@ -8,17 +8,17 @@ class App extends React.Component {
     super(props);
     this.state = {
       cards: [
-        { id: "1", color: "yellow", flipped: false },
-        { id: "2", color: "yellow", flipped: false },
-        { id: "3", color: "red", flipped: false },
-        { id: "4", color: "red", flipped: false },
-        { id: "5", color: "blue", flipped: false },
-        { id: "6", color: "blue", flipped: false },
-        { id: "7", color: "orange", flipped: false },
-        { id: "8", color: "orange", flipped: false },
+        { id: "1", color: "yellow", isFlipped: true },
+        { id: "2", color: "yellow", isFlipped: true },
+        { id: "3", color: "red", isFlipped: true },
+        { id: "4", color: "red", isFlipped: true },
+        { id: "5", color: "blue", isFlipped: true },
+        { id: "6", color: "blue", isFlipped: true },
+        { id: "7", color: "orange", isFlipped: true },
+        { id: "8", color: "orange", isFlipped: true },
       ],
       moves: 0,
-      pairs: 0,
+      pairs: [],
     };
   }
 
@@ -41,7 +41,7 @@ class App extends React.Component {
     });
   };
 
-  handleCardClick = (e) => {};
+  handleCardClick = () => {};
 
   render() {
     console.log(this.state.cards);
