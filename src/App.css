@@ -1,14 +1,30 @@
 .card {
-  margin: 10px;
-  width: 10%;
-  height: 175px;
-  background-color: grey;
-  border: 6px solid grey;
-  border-radius: 25px;
-  display: inline-block;
-  background-image: url("logo.png");
-  background-attachment: fixed;
+    margin: 10px;
+    width: 10%;
+    height: 175px;
+    background-color: grey;
+    border: 6px solid grey;
+    border-radius: 25px;
+    display: inline-block;
 }
 
+.yellow {
+    background-color: yellow;
+}
 
+.red {
+    background-color: red;
+}
 
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.flipped {
+    background-image: url("logo.png");
+    background-attachment: fixed;
+}
