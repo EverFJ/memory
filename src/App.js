@@ -16,6 +16,14 @@ class App extends React.Component {
         { id: "6", color: "blue", isFlipped: true },
         { id: "7", color: "orange", isFlipped: true },
         { id: "8", color: "orange", isFlipped: true },
+        { id: "9", color: "magenta", isFlipped: true },
+        { id: "10", color: "magenta", isFlipped: true },
+        { id: "11", color: "green", isFlipped: true },
+        { id: "12", color: "green", isFlipped: true },
+        { id: "13", color: "lightblue", isFlipped: true },
+        { id: "14", color: "lightblue", isFlipped: true },
+        { id: "15", color: "grey", isFlipped: true },
+        { id: "16", color: "grey", isFlipped: true },
       ],
       moves: 0,
       pairs: [0, 1, 2, 3, 4, 5, 6, 7, 8],
@@ -70,7 +78,7 @@ class App extends React.Component {
           </button>
         </div>
 
-        {this.state.cards.length == this.state.pairs.length && (
+        {this.state.cards.length === this.state.pairs.length && (
           <Endgame moves={this.state.moves} />
         )}
         <div className="grid">

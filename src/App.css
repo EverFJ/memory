@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(21, 220, 235);
+    /* background-color: rgb(21, 220, 235); */
+    background-image: url("img/casino.jpeg");
 }
 
 .card {
@@ -28,6 +29,22 @@ body {
     background-color: orange;
 }
 
+.magenta {
+    background-color: magenta;
+}
+
+.green {
+    background-color: green;
+}
+
+.lightblue {
+    background-color: lightblue;
+}
+
+.grey {
+    background-color: grey;
+}
+
 .flipped {
     background-image: url("logo.png");
     background-attachment: fixed;
@@ -47,7 +64,7 @@ body {
     box-shadow: 5px 2px 3px rgb(99, 95, 95);
     margin: 10px;
     padding: 10px;
-    background-color: rgba(177, 161, 24, 0.5);
+    background-color: rgba(190, 45, 219, 0.5);
 }
 
 .container {
