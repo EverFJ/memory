@@ -58,16 +58,21 @@ class App extends React.Component {
 
     return (
       <>
-        <h1 className="title">Memory Game </h1>
-        <button
-          className="reset"
-          onClick={() => {
-            this.handleResetButton(this.state.cards);
-          }}
-        >
-          Reset
-        </button>
-        {true && <Endgame moves={this.state.moves} />}
+        <div className="container">
+          <h1 className="title">Memory Game </h1>
+          <button
+            className="reset"
+            onClick={() => {
+              this.handleResetButton(this.state.cards);
+            }}
+          >
+            Reset
+          </button>
+        </div>
+
+        {this.state.cards.length == this.state.pairs.length && (
+          <Endgame moves={this.state.moves} />
+        )}
         <div className="grid">
           {this.state.cards.map((elem, index) => {
             return (

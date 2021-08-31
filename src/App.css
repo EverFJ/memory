@@ -38,8 +38,15 @@
     box-shadow: 5px 2px 3px rgb(99, 95, 95);
 }
 
-.reset {
-    margin-right: 20px;
+.grid {
+    border: 1px solid black;
+    box-shadow: 5px 2px 3px rgb(99, 95, 95);
+    margin: 10px;
     padding: 10px;
-    margin: 20x;
+}
+
+.container {
+    width: 20%;
+    margin: 0 auto;
+    margin-bottom: 30px;
 }
