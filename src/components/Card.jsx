@@ -11,7 +11,7 @@ class Card extends React.Component {
         <div
           className="card"
           onClick={() => {
-            onclick(key);
+            onclick(key, flipped);
           }}
         ></div>
       </>
