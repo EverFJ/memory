@@ -38,16 +38,14 @@ class App extends React.Component {
     this.setState({
       cards: cards,
       moves: 0,
-      pairs: 0,
+      pairs: [],
     });
   };
 
   handleCardClick = (id) => {
     const newCards = [...this.state.cards];
     const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
-    console.log(!newCards[cardIndex].isFlipped);
     newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
-    console.log(newCards);
     this.setState({ cards: newCards });
   };
 
