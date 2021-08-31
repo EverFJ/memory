@@ -26,7 +26,7 @@ class App extends React.Component {
         { id: "16", color: "grey", isFlipped: true },
       ],
       moves: 0,
-      pairs: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+      pairs: [],
     };
   }
 
@@ -42,7 +42,6 @@ class App extends React.Component {
       cards[currentIndex] = cards[randomIndex];
       cards[randomIndex] = temporaryValue;
     }
-    // reset isFlipped to false
     const newCards = [...cards];
     newCards.map((elem) => (elem.isFlipped = true));
     this.setState({
@@ -53,11 +52,34 @@ class App extends React.Component {
   };
 
   handleCardClick = (id) => {
-    // if first card clicked
     const newCards = [...this.state.cards];
     const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
-    newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
-    this.setState({ cards: newCards });
+    const clickedCard = newCards[cardIndex];
+    let pairs = [];
+    if (this.state.pairs.length % 2 === 0) {
+      clickedCard.isFlipped = !clickedCard.isFlipped;
+      pairs.push(clickedCard);
+      console.log("pairs", pairs);
+      this.setState({
+        cards: newCards,
+        pairs: pairs,
+      });
+    } else {
+      if (
+        clickedCard.color ===
+        this.state.pairs[this.state.pairs.length - 1].color
+      ) {
+        console.log("meme couleur");
+        pairs.push(clickedCard);
+        clickedCard.isFlipped = !clickedCard.isFlipped;
+        this.setState({
+          cards: newCards,
+          pairs: pairs,
+        });
+      } else {
+        console.log("pas la meme couleur");
+      }
+    }
   };
 
   componentDidMount() {

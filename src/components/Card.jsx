@@ -2,7 +2,6 @@ import React from "react";
 
 class Card extends React.Component {
   render() {
-    console.log(this.props);
     let { color, isFlipped, onClick, id } = this.props;
 
     const style = {
