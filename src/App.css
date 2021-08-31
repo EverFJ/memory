@@ -35,10 +35,11 @@
     margin: auto;
     text-align: center;
     padding: 20px;
+    box-shadow: 5px 2px 3px rgb(99, 95, 95);
 }
 
 .reset {
-    float: right;
+    margin-right: 20px;
     padding: 10px;
     margin: 20x;
 }
