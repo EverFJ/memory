@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(21, 220, 235);
+}
+
 .card {
     margin: 10px;
     width: 10%;
@@ -43,10 +47,32 @@
     box-shadow: 5px 2px 3px rgb(99, 95, 95);
     margin: 10px;
     padding: 10px;
+    background-color: rgba(177, 161, 24, 0.5);
 }
 
 .container {
     width: 20%;
     margin: 0 auto;
     margin-bottom: 30px;
+}
+
+.title {
+    color: #ee4e00;
+}
+
+.reset {
+    padding: 10px;
+    display: inline-block;
+    color: #008000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1em;
+    overflow: hidden;
+}
+
+.reset:hover {
+    color: #111;
+    background: #39ff14;
+    box-shadow: 0 0 50px #39ff14;
 }
