@@ -42,8 +42,11 @@ class App extends React.Component {
       cards[currentIndex] = cards[randomIndex];
       cards[randomIndex] = temporaryValue;
     }
+    // reset isFlipped to false
+    const newCards = [...cards];
+    newCards.map((elem) => (elem.isFlipped = true));
     this.setState({
-      cards: cards,
+      cards: newCards,
       moves: 0,
       pairs: [],
     });
