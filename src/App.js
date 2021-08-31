@@ -43,10 +43,16 @@ class App extends React.Component {
 
   handleCardClick = (id, isFlipped) => {
     const newCards = [...this.state.cards];
-    const cardIndex = this.state.cards.findIndex((elem) => elem.id == id);
+    const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
+    console.log(!newCards[cardIndex].isFlipped);
     newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
-    this.setState({ cards: newCards });
+    console.log(newCards);
+    // this.setState({ cards: newCards });
   };
+
+  componentDidMount() {
+    this.handleResetButton(this.state.cards);
+  }
 
   render() {
     console.log(this.state.cards);
