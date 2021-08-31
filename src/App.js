@@ -14,8 +14,8 @@ class App extends React.Component {
         { id: "4", color: "red", isFlipped: true },
         { id: "5", color: "blue", isFlipped: true },
         { id: "6", color: "blue", isFlipped: true },
-        { id: "7", color: "orange", isFlipped: true },
-        { id: "8", color: "orange", isFlipped: true },
+        { id: "7", color: "black", isFlipped: true },
+        { id: "8", color: "black", isFlipped: true },
         { id: "9", color: "magenta", isFlipped: true },
         { id: "10", color: "magenta", isFlipped: true },
         { id: "11", color: "green", isFlipped: true },
@@ -52,16 +52,13 @@ class App extends React.Component {
   };
 
   handleCardClick = (id) => {
-    const newCards = [...this.state.cards];
-    const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
-    const clickedCard = newCards[cardIndex];
+    let newCards = [...this.state.cards];
+    const clickedCard = this.state.cards.find((elem) => elem.id === id);
     let pairs = [...this.state.pairs];
 
     if (this.state.pairs.length % 2 === 0) {
-      clickedCard.isFlipped = !clickedCard.isFlipped;
+      clickedCard.isFlipped = false;
       pairs.push(clickedCard);
-
-      console.log("pairs", pairs);
 
       this.setState({
         cards: newCards,
@@ -72,17 +69,32 @@ class App extends React.Component {
         clickedCard.color ===
         this.state.pairs[this.state.pairs.length - 1].color
       ) {
-        console.log("meme couleur");
+        // Meme couleur
 
         pairs.push(clickedCard);
-        clickedCard.isFlipped = !clickedCard.isFlipped;
+        clickedCard.isFlipped = false;
 
         this.setState({
           cards: newCards,
           pairs: pairs,
         });
       } else {
-        console.log("pas la meme couleur");
+        // Pas la même couleur
+
+        const firstCard = this.state.cards.find(
+          (elem) => elem.id === this.state.pairs[this.state.pairs.length - 1].id
+        );
+
+        pairs.pop();
+        clickedCard.isFlipped = false;
+        setTimeout(() => {
+          clickedCard.isFlipped = true;
+          firstCard.isFlipped = true;
+        }, 200);
+        this.setState({
+          cards: newCards,
+          pairs: pairs,
+        });
       }
     }
   };
@@ -92,7 +104,8 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.cards);
+    console.log(this.state.cards.length);
+    console.log(this.state.pairs.length);
 
     return (
       <>
