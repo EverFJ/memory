@@ -26,7 +26,7 @@ class App extends React.Component {
         { id: "16", color: "grey", isFlipped: true },
       ],
       moves: 0,
-      pairs: [],
+      pairs: ["yellow", "red", "blue", "orange", "magenta", "green", "lighblue", "grey"],
     };
   }
 
