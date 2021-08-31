@@ -22,6 +22,7 @@ class App extends React.Component {
     };
   }
 
+
   handleResetButton = (cards) => {
     let currentIndex = cards.length,
       temporaryValue,
@@ -72,6 +73,8 @@ class App extends React.Component {
             );
           })}
         </div>
+
+        
         <button
           className="reset"
           onClick={() => {
