@@ -26,7 +26,7 @@ class App extends React.Component {
         { id: "16", color: "grey", isFlipped: true },
       ],
       moves: 0,
-      pairs: ["yellow", "red", "blue", "orange", "magenta", "green", "lighblue", "grey"],
+      pairs: [],
     };
   }
 
@@ -55,11 +55,14 @@ class App extends React.Component {
     const newCards = [...this.state.cards];
     const cardIndex = this.state.cards.findIndex((elem) => elem.id === id);
     const clickedCard = newCards[cardIndex];
-    let pairs = [];
+    let pairs = [...this.state.pairs];
+
     if (this.state.pairs.length % 2 === 0) {
       clickedCard.isFlipped = !clickedCard.isFlipped;
       pairs.push(clickedCard);
+
       console.log("pairs", pairs);
+
       this.setState({
         cards: newCards,
         pairs: pairs,
@@ -70,8 +73,10 @@ class App extends React.Component {
         this.state.pairs[this.state.pairs.length - 1].color
       ) {
         console.log("meme couleur");
+
         pairs.push(clickedCard);
         clickedCard.isFlipped = !clickedCard.isFlipped;
+
         this.setState({
           cards: newCards,
           pairs: pairs,
