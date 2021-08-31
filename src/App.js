@@ -41,11 +41,12 @@ class App extends React.Component {
     });
   };
 
-  handleCardClick = (key, flipped) => {
-    const card = this.state.cards.find((elem) => elem.id == key);
-
-    // this.setState({});
-  }; //
+  handleCardClick = (id, isFlipped) => {
+    const newCards = [...this.state.cards];
+    const cardIndex = this.state.cards.findIndex((elem) => elem.id == id);
+    newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
+    this.setState({ cards: newCards });
+  };
 
   render() {
     console.log(this.state.cards);
@@ -58,8 +59,8 @@ class App extends React.Component {
             return (
               <Card
                 color={elem.color}
-                flipped={elem.flipped}
-                key={elem.id}
+                isFlipped={elem.isFlipped}
+                id={elem.id}
                 onClick={this.handleCardClick}
               />
             );
