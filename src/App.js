@@ -41,7 +41,7 @@ class App extends React.Component {
     });
   };
 
-  handleCardClick = (id, flipped) => {
+  handleCardClick = (id, isFlipped) => {
     const newCards = [...this.state.cards];
     const cardIndex = this.state.cards.findIndex((elem) => elem.id == id);
     newCards[cardIndex].isFlipped = !newCards[cardIndex].isFlipped;
@@ -59,7 +59,7 @@ class App extends React.Component {
             return (
               <Card
                 color={elem.color}
-                flipped={elem.flipped}
+                isFlipped={elem.isFlipped}
                 id={elem.id}
                 onClick={this.handleCardClick}
               />
