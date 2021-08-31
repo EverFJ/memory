@@ -44,8 +44,8 @@ class App extends React.Component {
   handleCardClick = (key, flipped) => {
     const card = this.state.cards.find((elem) => elem.id == key);
 
-    this.setState({});
-  };
+    // this.setState({});
+  }; //
 
   render() {
     console.log(this.state.cards);
