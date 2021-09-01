@@ -1,5 +1,4 @@
 body {
-    /* background-color: rgb(21, 220, 235); */
     background-image: url("img/duel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,6 +11,10 @@ body {
     background-color: grey;
     border: 6px solid white;
     border-radius: 25px;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 .yellow {
@@ -63,8 +66,6 @@ body {
     padding: 20px;
     color: #39ff14;
     box-shadow: 0 0 50px #39ff14;
-
-    /* box-shadow: 5px 2px 3px rgb(99, 95, 95); */
     background-color: black;
 }
 
@@ -73,9 +74,9 @@ body {
     flex-wrap: wrap;
     /* border: 1px solid black; */
     /* box-shadow: 5px 2px 3px rgb(99, 95, 95); */
+    /* background-color: rgba(190, 45, 219, 0.5); */
     margin: 10px auto;
     padding: 10px;
-    /* background-color: rgba(190, 45, 219, 0.5); */
     width: 90%;
 }
 
