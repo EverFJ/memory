@@ -113,7 +113,5 @@ body {
 }
 
 .rotate:hover {
-    transform: rotateY(0deg);
-    transform: rotateY(-1800deg);
-    transition: 0.4s;
+    transform: rotateY(180deg);
 }
