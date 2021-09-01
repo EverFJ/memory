@@ -59,10 +59,12 @@ class App extends React.Component {
     if (this.state.pairs.length % 2 === 0) {
       clickedCard.isFlipped = false;
       pairs.push(clickedCard);
-
+      let moves = this.state.moves;
+      moves++;
       this.setState({
         cards: newCards,
         pairs: pairs,
+        moves: moves,
       });
     } else {
       if (
@@ -121,21 +123,22 @@ class App extends React.Component {
           </button>
         </div>
 
-        {this.state.cards.length === this.state.pairs.length && (
+        {this.state.cards.length === this.state.pairs.length ? (
           <Endgame moves={this.state.moves} />
+        ) : (
+          <div className="grid">
+            {this.state.cards.map((elem, index) => {
+              return (
+                <Card
+                  color={elem.color}
+                  isFlipped={elem.isFlipped}
+                  id={elem.id}
+                  onClick={this.handleCardClick}
+                />
+              );
+            })}
+          </div>
         )}
-        <div className="grid">
-          {this.state.cards.map((elem, index) => {
-            return (
-              <Card
-                color={elem.color}
-                isFlipped={elem.isFlipped}
-                id={elem.id}
-                onClick={this.handleCardClick}
-              />
-            );
-          })}
-        </div>
       </>
     );
   }

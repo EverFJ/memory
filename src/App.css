@@ -8,7 +8,7 @@ body {
 .card {
     margin: 10px;
     width: 10%;
-    height: 175px;
+    height: 190px;
     background-color: grey;
     border: 6px solid white;
     border-radius: 25px;
@@ -58,16 +58,21 @@ body {
     border: 1px solid black;
     width: 25%;
     margin: auto;
+    margin-top: 120px;
     text-align: center;
     padding: 20px;
-    box-shadow: 5px 2px 3px rgb(99, 95, 95);
+    color: #39ff14;
+    box-shadow: 0 0 50px #39ff14;
+
+    /* box-shadow: 5px 2px 3px rgb(99, 95, 95); */
+    background-color: black;
 }
 
 .grid {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid black;
-    box-shadow: 5px 2px 3px rgb(99, 95, 95);
+    /* border: 1px solid black; */
+    /* box-shadow: 5px 2px 3px rgb(99, 95, 95); */
     margin: 10px auto;
     padding: 10px;
     /* background-color: rgba(190, 45, 219, 0.5); */
@@ -81,7 +86,8 @@ body {
 }
 
 .title {
-    color: #ee4e00;
+    color: #39ff14;
+    text-shadow: 0 0 50px #39ff14;
     text-align: center;
 }
 
