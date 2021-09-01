@@ -22,8 +22,8 @@ class App extends React.Component {
         { id: "12", color: "green", isFlipped: true },
         { id: "13", color: "lightblue", isFlipped: true },
         { id: "14", color: "lightblue", isFlipped: true },
-        { id: "15", color: "grey", isFlipped: true },
-        { id: "16", color: "grey", isFlipped: true },
+        { id: "15", color: "brown", isFlipped: true },
+        { id: "16", color: "brown", isFlipped: true },
       ],
       moves: 0,
       pairs: [],
@@ -71,8 +71,6 @@ class App extends React.Component {
         clickedCard.color ===
         this.state.pairs[this.state.pairs.length - 1].color
       ) {
-        // Meme couleur
-
         pairs.push(clickedCard);
         clickedCard.isFlipped = false;
 
@@ -81,14 +79,13 @@ class App extends React.Component {
           pairs: pairs,
         });
       } else {
-        // Pas la même couleur
-
         const firstCard = this.state.cards.find(
           (elem) => elem.id === this.state.pairs[this.state.pairs.length - 1].id
         );
 
         pairs.pop();
         clickedCard.isFlipped = false;
+
         setTimeout(() => {
           clickedCard.isFlipped = true;
           firstCard.isFlipped = true;
