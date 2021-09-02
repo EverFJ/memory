@@ -115,6 +115,7 @@ body {
     text-align: center;
     font-size: 17px;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .reset {
@@ -143,6 +144,8 @@ body {
     transition: all 0.2s;
 }
 
-.Timer-display {
+.timer {
     color: #39ff14;
+    text-align: center;
+    margin-bottom: 20px;
 }

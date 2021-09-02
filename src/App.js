@@ -15,16 +15,16 @@ class App extends React.Component {
         { id: "4", color: "red", isFlipped: true },
         { id: "5", color: "blue", isFlipped: true },
         { id: "6", color: "blue", isFlipped: true },
-        { id: "7", color: "magenta", isFlipped: true },
-        { id: "8", color: "magenta", isFlipped: true },
-        { id: "9", color: "violet", isFlipped: true },
-        { id: "10", color: "violet", isFlipped: true },
-        { id: "11", color: "green", isFlipped: true },
-        { id: "12", color: "green", isFlipped: true },
-        { id: "13", color: "salmon", isFlipped: true },
-        { id: "14", color: "salmon", isFlipped: true },
-        { id: "15", color: "brown", isFlipped: true },
-        { id: "16", color: "brown", isFlipped: true },
+        // { id: "7", color: "magenta", isFlipped: true },
+        // { id: "8", color: "magenta", isFlipped: true },
+        // { id: "9", color: "violet", isFlipped: true },
+        // { id: "10", color: "violet", isFlipped: true },
+        // { id: "11", color: "green", isFlipped: true },
+        // { id: "12", color: "green", isFlipped: true },
+        // { id: "13", color: "salmon", isFlipped: true },
+        // { id: "14", color: "salmon", isFlipped: true },
+        // { id: "15", color: "brown", isFlipped: true },
+        // { id: "16", color: "brown", isFlipped: true },
       ],
       moves: 0,
       pairs: [],
@@ -43,12 +43,14 @@ class App extends React.Component {
       this.setState({
         timerTime: Date.now() - this.state.timerStart,
       });
-    }, 10);
+    }, 1000);
   };
 
   stopTimer = () => {
-    this.setState({ timerOn: false });
-    clearInterval(this.timer);
+    if (this.state.timerOn) {
+      this.setState({ timerOn: false });
+      clearInterval(this.timer);
+    }
   };
 
   handleResetButton = (cards) => {
@@ -70,17 +72,13 @@ class App extends React.Component {
       moves: 0,
       pairs: [],
     });
-    // this.startTimer();
+    this.startTimer();
   };
 
   handleCardClick = (id) => {
     let newCards = [...this.state.cards];
     const clickedCard = this.state.cards.find((elem) => elem.id === id);
     let pairs = [...this.state.pairs];
-
-    // if (!newCards[id].isFlipped) {
-    //   return;
-    // }
 
     if (this.state.pairs.length % 2 === 0) {
       clickedCard.isFlipped = false;
@@ -115,7 +113,7 @@ class App extends React.Component {
         setTimeout(() => {
           clickedCard.isFlipped = true;
           firstCard.isFlipped = true;
-        }, 200);
+        }, 100);
         this.setState({
           cards: newCards,
           pairs: pairs,
@@ -137,6 +135,11 @@ class App extends React.Component {
         <div className="container">
           <h1 className="title">MemoraVirus</h1>
           <p className="try">Tries : {this.state.moves}</p>
+          <Timer
+            timerOn={this.state.timerOn}
+            timerTime={this.state.timerTime}
+            timerStart={this.state.timerStart}
+          />
           <button
             className="reset"
             onClick={() => {
@@ -145,13 +148,9 @@ class App extends React.Component {
           >
             Reset
           </button>
-          {/* <Timer
-            timerOn={this.state.timerOn}
-            timerTime={this.state.timerTime}
-            timerStart={this.state.timerStart}
-          /> */}
         </div>
-
+        {this.state.cards.length === this.state.pairs.length &&
+          this.stopTimer()}
         {this.state.cards.length === this.state.pairs.length ? (
           <Endgame moves={this.state.moves} />
         ) : (
