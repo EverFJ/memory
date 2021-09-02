@@ -5,12 +5,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Audiowide", monospace;
+    overflow: hidden;
 }
 
 .card {
     margin: 5px;
     width: 10%;
-    height: 165px;
+    height: 160px;
     background-color: grey;
     border: 6px solid white;
     border-radius: 25px;
@@ -94,12 +95,15 @@ body {
     padding: 5px;
     width: 90%;
     margin-inline-end: 23px;
+    position: relative;
+    bottom: 20px;
 }
 
 .container {
     width: 20%;
     margin: 0 auto;
-    margin-bottom: 10px;
+    position: relative;
+    bottom: 10px;
 }
 
 .title {
@@ -115,7 +119,6 @@ body {
     text-align: center;
     font-size: 17px;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 .reset {
@@ -129,6 +132,7 @@ body {
     overflow: hidden;
     margin: auto;
     border-radius: 18px;
+    margin-bottom: 20px;
 }
 
 .reset:hover {
