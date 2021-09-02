@@ -20,8 +20,8 @@ class App extends React.Component {
         { id: "10", color: "violet", isFlipped: true },
         { id: "11", color: "green", isFlipped: true },
         { id: "12", color: "green", isFlipped: true },
-        { id: "13", color: "grey", isFlipped: true },
-        { id: "14", color: "grey", isFlipped: true },
+        { id: "13", color: "salmon", isFlipped: true },
+        { id: "14", color: "salmon", isFlipped: true },
         { id: "15", color: "brown", isFlipped: true },
         { id: "16", color: "brown", isFlipped: true },
       ],
@@ -55,6 +55,10 @@ class App extends React.Component {
     let newCards = [...this.state.cards];
     const clickedCard = this.state.cards.find((elem) => elem.id === id);
     let pairs = [...this.state.pairs];
+
+    // if (!newCards[id].isFlipped) {
+    //   return;
+    // }
 
     if (this.state.pairs.length % 2 === 0) {
       clickedCard.isFlipped = false;

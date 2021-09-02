@@ -60,9 +60,9 @@ body {
     background-repeat: no-repeat;
 }
 
-.grey {
+.salmon {
     /* background-color: rgb(0, 255, 234); */
-    background-image: url("./img/card-.png");
+    background-image: url("./img/card-salmon.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
