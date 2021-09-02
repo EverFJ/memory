@@ -10,7 +10,7 @@ body {
 .card {
     margin: 5px;
     width: 10%;
-    height: 190px;
+    height: 165px;
     background-color: grey;
     border: 6px solid white;
     border-radius: 25px;
@@ -99,13 +99,14 @@ body {
 .container {
     width: 20%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .title {
     color: #39ff14;
     text-shadow: 0 0 50px #39ff14;
     text-align: center;
+    margin: 20px;
 }
 
 .try {
