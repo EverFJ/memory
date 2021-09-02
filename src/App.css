@@ -4,7 +4,7 @@ body {
     background-image: url("img/duel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Press Start 2P";
+    font-family: "Audiowide", monospace;
 }
 
 .card {
@@ -18,7 +18,7 @@ body {
 
 .card:hover {
     transform: scale(1.03);
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
 }
 
 .yellow {

@@ -17,10 +17,10 @@ class Endgame extends React.Component {
     return (
       <>
         <div className="endgame">
-          <h2>Félicitation</h2>
-          <p>Vous avez gagné en {moves} essais</p>
+          <h2>Congratulations !!!</h2>
+          <p>You won in {moves} tries</p>
           <p>
-            {starsNumber === 3 && star} {starsNumber === 3 && star}{" "}
+            Rating :{starsNumber === 3 && star} {starsNumber === 3 && star}{" "}
             {starsNumber === 3 && star}
             {starsNumber === 2 && star} {starsNumber === 2 && star}
             {starsNumber === 1 && star}
