@@ -10,9 +10,13 @@ class Card extends React.Component {
           className={`card ${isFlipped && "flipped"} ${
             !isFlipped && "rotate"
           } ${color}`}
-          onClick={() => {
-            onClick(id);
-          }}
+          onClick={
+            isFlipped
+              ? () => {
+                  onClick(id);
+                }
+              : null
+          }
         ></div>
       </>
     );
