@@ -113,7 +113,7 @@ class App extends React.Component {
     return (
       <>
         <div className="container">
-          <h1 className="title">MemoraVirus </h1>
+          <h1 className="title">MemoraVirus</h1>
           <p className="try">Tries : {this.state.moves}</p>
           <button
             className="reset"

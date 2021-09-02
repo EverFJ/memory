@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Press+Start+2P&display=swap");
+
 body {
     background-image: url("img/duel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: "Press Start 2P";
 }
 
 .card {
@@ -90,6 +93,7 @@ body {
     margin: 10px auto;
     padding: 5px;
     width: 90%;
+    margin-inline-end: 23px;
 }
 
 .container {

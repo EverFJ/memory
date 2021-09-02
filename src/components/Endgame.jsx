@@ -8,9 +8,9 @@ class Endgame extends React.Component {
     let starsNumber = 0;
     if (moves <= 14) {
       starsNumber = 3;
-    } else if (moves > 14 && moves <= 16) {
+    } else if (moves > 14 && moves <= 19) {
       starsNumber = 2;
-    } else if (moves > 16 && moves <= 26) {
+    } else if (moves > 19) {
       starsNumber = 1;
     }
 
