@@ -15,16 +15,16 @@ class App extends React.Component {
         { id: "4", color: "red", isFlipped: true },
         { id: "5", color: "blue", isFlipped: true },
         { id: "6", color: "blue", isFlipped: true },
-        // { id: "7", color: "magenta", isFlipped: true },
-        // { id: "8", color: "magenta", isFlipped: true },
-        // { id: "9", color: "violet", isFlipped: true },
-        // { id: "10", color: "violet", isFlipped: true },
-        // { id: "11", color: "green", isFlipped: true },
-        // { id: "12", color: "green", isFlipped: true },
-        // { id: "13", color: "salmon", isFlipped: true },
-        // { id: "14", color: "salmon", isFlipped: true },
-        // { id: "15", color: "brown", isFlipped: true },
-        // { id: "16", color: "brown", isFlipped: true },
+        { id: "7", color: "magenta", isFlipped: true },
+        { id: "8", color: "magenta", isFlipped: true },
+        { id: "9", color: "violet", isFlipped: true },
+        { id: "10", color: "violet", isFlipped: true },
+        { id: "11", color: "green", isFlipped: true },
+        { id: "12", color: "green", isFlipped: true },
+        { id: "13", color: "salmon", isFlipped: true },
+        { id: "14", color: "salmon", isFlipped: true },
+        { id: "15", color: "brown", isFlipped: true },
+        { id: "16", color: "brown", isFlipped: true },
       ],
       moves: 0,
       pairs: [],
@@ -53,7 +53,7 @@ class App extends React.Component {
     }
   };
 
-  handleResetButton = (cards) => {
+  shuffle = (cards) => {
     let currentIndex = cards.length,
       temporaryValue,
       randomIndex;
@@ -73,6 +73,10 @@ class App extends React.Component {
       pairs: [],
     });
     this.startTimer();
+  };
+
+  resetPage = () => {
+    window.location.reload();
   };
 
   handleCardClick = (id) => {
@@ -123,13 +127,12 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.handleResetButton(this.state.cards);
+    console.log("did mount");
+    this.startTimer();
+    this.shuffle(this.state.cards);
   }
 
   render() {
-    console.log(this.state.cards.length);
-    console.log(this.state.pairs.length);
-
     return (
       <>
         <div className="container">
@@ -143,7 +146,7 @@ class App extends React.Component {
           <button
             className="reset"
             onClick={() => {
-              this.handleResetButton(this.state.cards);
+              this.resetPage();
             }}
           >
             Reset
