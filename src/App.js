@@ -14,16 +14,16 @@ class App extends React.Component {
         { id: "4", color: "red", isFlipped: true },
         { id: "5", color: "blue", isFlipped: true },
         { id: "6", color: "blue", isFlipped: true },
-        { id: "7", color: "magenta", isFlipped: true },
-        { id: "8", color: "magenta", isFlipped: true },
-        { id: "9", color: "violet", isFlipped: true },
-        { id: "10", color: "violet", isFlipped: true },
-        { id: "11", color: "green", isFlipped: true },
-        { id: "12", color: "green", isFlipped: true },
-        { id: "13", color: "salmon", isFlipped: true },
-        { id: "14", color: "salmon", isFlipped: true },
-        { id: "15", color: "brown", isFlipped: true },
-        { id: "16", color: "brown", isFlipped: true },
+        // { id: "7", color: "magenta", isFlipped: true },
+        // { id: "8", color: "magenta", isFlipped: true },
+        // { id: "9", color: "violet", isFlipped: true },
+        // { id: "10", color: "violet", isFlipped: true },
+        // { id: "11", color: "green", isFlipped: true },
+        // { id: "12", color: "green", isFlipped: true },
+        // { id: "13", color: "salmon", isFlipped: true },
+        // { id: "14", color: "salmon", isFlipped: true },
+        // { id: "15", color: "brown", isFlipped: true },
+        // { id: "16", color: "brown", isFlipped: true },
       ],
       moves: 0,
       pairs: [],
@@ -113,7 +113,7 @@ class App extends React.Component {
     return (
       <>
         <div className="container">
-          <h1 className="title">Memory Virus </h1>
+          <h1 className="title">MemoraVirus </h1>
           <button
             className="reset"
             onClick={() => {
