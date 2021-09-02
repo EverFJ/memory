@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./components/Card";
 import Endgame from "./components/Endgame";
+import Timer from "./components/Timer";
 import "./App.css";
 
 class App extends React.Component {
@@ -27,8 +28,28 @@ class App extends React.Component {
       ],
       moves: 0,
       pairs: [],
+      timerOn: false,
+      timerStart: 0,
+      timerTime: 0,
     };
   }
+  startTimer = () => {
+    this.setState({
+      timerOn: true,
+      timerTime: this.state.timerTime,
+      timerStart: Date.now() - this.state.timerTime,
+    });
+    this.timer = setInterval(() => {
+      this.setState({
+        timerTime: Date.now() - this.state.timerStart,
+      });
+    }, 10);
+  };
+
+  stopTimer = () => {
+    this.setState({ timerOn: false });
+    clearInterval(this.timer);
+  };
 
   handleResetButton = (cards) => {
     let currentIndex = cards.length,
@@ -49,6 +70,7 @@ class App extends React.Component {
       moves: 0,
       pairs: [],
     });
+    // this.startTimer();
   };
 
   handleCardClick = (id) => {
@@ -123,6 +145,11 @@ class App extends React.Component {
           >
             Reset
           </button>
+          {/* <Timer
+            timerOn={this.state.timerOn}
+            timerTime={this.state.timerTime}
+            timerStart={this.state.timerStart}
+          /> */}
         </div>
 
         {this.state.cards.length === this.state.pairs.length ? (

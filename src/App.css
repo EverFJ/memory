@@ -142,3 +142,7 @@ body {
     transform: rotateY(180deg);
     transition: all 0.2s;
 }
+
+.Timer-display {
+    color: #39ff14;
+}
