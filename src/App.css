@@ -19,35 +19,59 @@ body {
 }
 
 .yellow {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-image: url("./img/card-yellow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .red {
-    background-color: red;
+    /* background-color: red; */
+    background-image: url("./img/card-red.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .blue {
-    background-color: blue;
-}
-
-.black {
-    background-color: rgb(22, 20, 20);
+    /* background-color: blue; */
+    background-image: url("./img/card-blue.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .magenta {
-    background-color: rgb(140, 0, 255);
+    /* background-color: rgb(22, 20, 20); */
+    background-image: url("./img/card-magenta.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.violet {
+    /* background-color: rgb(140, 0, 255); */
+    background-image: url("./img/card-violet.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .green {
-    background-color: green;
+    /* background-color: green; */
+    background-image: url("./img/card-green.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.lightblue {
-    background-color: rgb(0, 255, 234);
+.grey {
+    /* background-color: rgb(0, 255, 234); */
+    background-image: url("./img/card-.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .brown {
-    background-color: brown;
+    /* background-color: brown; */
+    background-image: url("./img/card-brown.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .flipped {
@@ -112,5 +136,5 @@ body {
 
 .rotate:hover {
     transform: rotateY(180deg);
-    transition: all 0.5s;
+    transition: all 0.2s;
 }

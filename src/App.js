@@ -14,14 +14,14 @@ class App extends React.Component {
         { id: "4", color: "red", isFlipped: true },
         { id: "5", color: "blue", isFlipped: true },
         { id: "6", color: "blue", isFlipped: true },
-        { id: "7", color: "black", isFlipped: true },
-        { id: "8", color: "black", isFlipped: true },
-        { id: "9", color: "magenta", isFlipped: true },
-        { id: "10", color: "magenta", isFlipped: true },
+        { id: "7", color: "magenta", isFlipped: true },
+        { id: "8", color: "magenta", isFlipped: true },
+        { id: "9", color: "violet", isFlipped: true },
+        { id: "10", color: "violet", isFlipped: true },
         { id: "11", color: "green", isFlipped: true },
         { id: "12", color: "green", isFlipped: true },
-        { id: "13", color: "lightblue", isFlipped: true },
-        { id: "14", color: "lightblue", isFlipped: true },
+        { id: "13", color: "grey", isFlipped: true },
+        { id: "14", color: "grey", isFlipped: true },
         { id: "15", color: "brown", isFlipped: true },
         { id: "16", color: "brown", isFlipped: true },
       ],
@@ -83,8 +83,8 @@ class App extends React.Component {
           (elem) => elem.id === this.state.pairs[this.state.pairs.length - 1].id
         );
 
-        pairs.pop();
         clickedCard.isFlipped = false;
+        pairs.pop();
 
         setTimeout(() => {
           clickedCard.isFlipped = true;
@@ -109,7 +109,7 @@ class App extends React.Component {
     return (
       <>
         <div className="container">
-          <h1 className="title">Memory Game </h1>
+          <h1 className="title">Memory Virus </h1>
           <button
             className="reset"
             onClick={() => {
